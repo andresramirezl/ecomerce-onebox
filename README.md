@@ -117,6 +117,6 @@ src/
 
 ## Contact
 
-[Andres] - [feliperamirez@gmail.com]
+Andres - feliperamirez@gmail.com
 
-Link del proyecto: [https://github.com/AndresFelipeRamirez/test-onebox]
+Link del proyecto: https://github.com/AndresFelipeRamirez/test-onebox
