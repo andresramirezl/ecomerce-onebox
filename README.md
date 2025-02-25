@@ -1,8 +1,8 @@
 # E-commerce API
 
-API REST desarrollada con Spring Boot para gestionar un carrito de compras simple.
+API REST develop with Spring Boot to manage a simple shopping cart.
 
-## Tecnologías Utilizadas
+## Tecnologies Utilized
 
 - Java 21
 - Spring Boot 3.4.3
@@ -11,85 +11,85 @@ API REST desarrollada con Spring Boot para gestionar un carrito de compras simpl
 - Swagger/OpenAPI
 - Lombok
 
-## Características
+## Features
 
-- Gestión de carritos de compra CRUD
-- Los carritos pueden tener uno o mas productos
-- Expiración automática de carritos inactivos (10 minutos)
-- Documentación API con Swagger
-- Tests unitarios
+- CRUD management of shopping carts
+- Carts can have one or more products
+- Automatic expiration of inactive carts (10 minutes)
+- API documentation with Swagger
+- Unit tests
 
-## Requisitos Previos
+## Prerequisites
 
-- Java 21 o superior
-- Maven 3.6 o superior
+- Java 21 or higher
+- Maven 3.6 or higher
 
-## Instalación
+## Installation
 
-1. Clonar el repositorio:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/tu-usuario/ecomerce-onebox.git
 cd ecomerce-onebox
 ```
 
-2. Ejecutar la aplicación:
+2. Run the application:
 
 ```bash
 mvn spring-boot:run
 ```
 
-3. Acceder a la documentación de la API:
+3. Access the API documentation:
 
 ```bash
 http://localhost:8080/swagger-ui/index.html
 ```
 
-## Endpoints API
+## API Endpoints
 
-### Carritos
+### Carts
 
-- `POST /Carts` - Crear un nuevo carrito
-- `GET /Carts/{id}` - Obtener un carrito por ID
-- `GET /Carts` - Obtener todos los carritos
-- `POST /Carts/{id}/products` - Añadir producto al carrito
-- `DELETE /Carts/{id}` - Eliminar un carrito
+- `POST /Carts` - Create a new cart
+- `GET /Carts/{id}` - Get a cart by ID
+- `GET /Carts` - Get all carts
+- `POST /Carts/{id}/products` - Add product to cart
+- `DELETE /Carts/{id}` - Delete a cart
 
-### Productos -> controllador desahabilitado
+### Products -> disabled controller
 
-- `GET /products` - Obtener todos los productos
-- `GET /products/{id}` - Obtener un producto por ID
-- `POST /products` - Crear un nuevo producto
-- `PUT /products/{id}` - Actualizar un producto existente
-- `DELETE /products/{id}` - Eliminar un producto
+- `GET /products` - Get all products
+- `GET /products/{id}` - Get a product by ID
+- `POST /products` - Create a new product
+- `PUT /products/{id}` - Update an existing product
+- `DELETE /products/{id}` - Delete a product
 
-## Documentación API
+## API Documentation
 
-La documentación de la API está disponible a través de Swagger UI:
+The API documentation is available through Swagger UI:
 
 ## Tests
 
-Para ejecutar los tests:
+To run the tests:
 ```bash
 mvn test
 ```
 
 ### Cobertura de Tests
 
-Los tests incluyen:
-- Tests unitarios para ProductService
-- Tests unitarios para CartService
-- Validación de la expiración de carritos
-- Manejo de casos de error
+The tests include:
+- Unit tests for ProductService
+- Unit tests for CartService
+- Validation of cart expiration
+- Error handling
 
-## Características Especiales
+## Special Features
 
-- Expiración automática de carritos después de 1 minuto de inactividad
-- Gestión concurrente de carritos usando ConcurrentHashMap
-- Validación de datos de entrada
-- Manejo de errores personalizado
+- Automatic expiration of carts after 1 minute of inactivity
+- Concurrent cart management using ConcurrentHashMap
+- Input data validation
+- Custom error handling
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
@@ -109,17 +109,13 @@ src/
 
 ## Contribuir
 
-1. Fork el proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
+1. Fork the project
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Licencia
-
-[Tipo de Licencia] - ver el archivo LICENSE.md para más detalles
-
-## Contacto
+## Contact
 
 [Andres] - [feliperamirez@gmail.com]
 
