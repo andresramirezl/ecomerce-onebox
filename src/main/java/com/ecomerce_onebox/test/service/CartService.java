@@ -1,5 +1,6 @@
 package com.ecomerce_onebox.test.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -16,8 +17,15 @@ public class CartService {
 
     private final Map<Long, Cart> carts = new ConcurrentHashMap<>();
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+    private final long expirationTime; // en milisegundos
 
     public CartService() {
+        this(600000); // 10 minutos por defecto
+    }
+
+    // Constructor para testing
+    public CartService(long expirationTime) {
+        this.expirationTime = expirationTime;
         scheduler.scheduleAtFixedRate(this::removeExpiredCarts, 1, 1, TimeUnit.MINUTES);
     }
 
@@ -47,6 +55,11 @@ public class CartService {
         cart.setLastActiveTime(System.currentTimeMillis());
     }
 
+    /* get all carts */
+    public List<Cart> findAll() {
+        return new ArrayList<>(carts.values());
+    }
+
     /* delete a cart */
     public void deleteCart(Long cartId) {
         carts.remove(cartId);
@@ -55,7 +68,12 @@ public class CartService {
     /* remove expired carts */
     private void removeExpiredCarts() {
         long currentTime = System.currentTimeMillis();
-        //carts.entrySet().removeIf(entry -> (now - entry.getValue().getLastActiveTime()) > 600000);
-        carts.values().removeIf(cart -> currentTime - cart.getLastActiveTime() > 1000 * 60 * 10);
+        carts.values().removeIf(cart -> 
+            (currentTime - cart.getLastActiveTime()) > expirationTime);
+    }
+
+    // Método para testing
+    public void checkExpiredCarts() {
+        removeExpiredCarts();
     }
 }
